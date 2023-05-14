@@ -103,21 +103,21 @@ En tu primer laboratorio:
 
 - Experimenta todo lo que puedas. Cambia las comillas dobles a comillas simples, usa múltiples funciones print() en la misma línea, y luego en diferentes líneas. Mira qué pasa.
 
-  # Solución Muestra
+# Solución Muestra
 
-  print("¡Hola, Python!")
+    print("¡Hola, Python!")
 
-  # print("Greg")
+    print("Greg")
 
-  # print(Greg)
+    print(Greg)
 
-  # print"Greg"
+    print"Greg"
 
-  # print('Greg')
+    print('Greg')
 
-  # print("Greg") print("Python")
+    print("Greg") print("Python")
 
-  # ...</sampleSolution>
+    ...</sampleSolution>
 
 # 2.1.6 La función print() y su efecto, argumentos, y valores retornados.
 
@@ -176,7 +176,7 @@ Como puedes ver, la invocación vacía de print() no está tan vacía como podr�
 
 Esta no es la única forma de producir una **nuevalínea** en la consola de salida. Ahora le mostraremos otra manera.
 
-# 2.1.8 Caracteres de escape y nueva línea en Python
+# 2.1.8 Caracteres de escape y nueva línea en Python.
 
 Hemos modificado el código de nuevo. Obsérvalo con cuidado.
 
@@ -213,3 +213,171 @@ print("\\")
 2. No todos los pares de escape (la barra invertida junto con otro carácter) significan algo.
 
 # 2.1.9 Usando múltiples argumentos.
+
+También vale la pena intentar alimentar a la función print() con más de un argumento.
+
+    print("La Witsi Witsi Araña" , "subió" , "a su telaraña.")
+
+Hay una invocación de la función print(), pero contiene **tres argumentos**. Todos ellos son cadenas.
+
+Los argumentos están **separados por comas**. Los hemos rodeado de espacios para hacerlos más visibles, pero no es realmente necesario, y no lo haremos más.
+
+En este caso, las comas al separar los argumentos juega un papel completamente diferente al de la coma dentro de la cadena. El primero es parte de la sintaxis de Python, mientras que el segundo está diseñado para mostrarse en la consola.
+
+La función print() invocada con más de un argumento los **muestra todos en una sola línea**.
+La función print() **pone un espacio entre los argumentos de salida** por iniciativa propia.
+
+# 2.1.10 Argumentos posicionales.
+
+Ahora que sabes un poco sobre las costumbres de la función print(), te mostraremos cómo cambiarlas.
+
+Deberías poder predecir la salida sin ejecutar el código en el editor.
+
+    print("Mi nombre es", "Python.")
+    print("Monty Python.")
+
+La forma en que estamos pasando los argumentos a la función print() es la más común en Python, y se llama **la forma posicional**. Este nombre proviene del hecho de que el significado del argumento está dictado por su posición (por ejemplo, el segundo argumento se mostrará después del primero, no al revés).
+
+# 2.1.11 Argumentos de palabra clave.
+
+El mecanismo se llama **argumentos de palabras clave**. El nombre proviene del hecho de que el significado de estos argumentos se toma no de su ubicación (posición) sino de la palabra especial (palabra clave) utilizada para identificarlos.
+
+La función print() tiene dos argumentos de palabra clave que puedes usar para tus propósitos. El primero se llama end.
+
+    print("Mi nombre es", "Python.", end=" ")
+    print("Monty Python.")
+
+Para usarlo, es necesario conocer algunas reglas:
+
+- Un argumento de palabra clave consta de tres elementos: una **palabra clave** se identifica el argumento (end aquí); un **signo de igual** (=); y un **valor** asignado a ese argumento.
+- Cualquier argumento de palabra clave debe colocarse **después del último argumento posicional** (esto es muy importante).
+
+Y ahora es el momento de intentar algo más difícil.
+
+Si miras con atención, verás que hemos usado el argumento end, pero la cadena que se le asignó está vacía (no contiene ningún carácter).
+
+¿Qué sucederá ahora? Ejecuta el programa en el editor para averiguarlo.
+
+    print("Mi nombre es ", end="")
+    print("Monty Python.")
+
+Como el argumento end se ha establecido a nada, la función print() tampoco genera nada, una vez que se han agotado sus argumentos posicionales.
+
+El **argumento de palabra clave** que puede hacer esto se denomina sep (como en separador).
+
+Mira el código en el editor, y ejecútalo.
+print("Mi", "nombre", "es", "Monty", "Python.", sep="-")
+
+Ambos argumentos de palabra clave pueden **mezclarse en una invocación**, como aquí en la ventana del editor.
+
+    print("Mi", "nombre", "es", sep="\_", end="_")
+    print("Monty", "Python.", sep="_", end="\*\n")
+
+# 2.1.12 LAB La función print() y sus argumentos.
+
+# Escenario
+
+Modifica la primera línea de código en el editor, usando las palabras claves reservadas sep y end, para que se obtenga la salida esperada. Emplea dos funciones print() en el editor.
+
+No cambies nada en la segunda invocación del print().
+print("Programming","Essentials","in", sep="\*\*\*", end="...")
+print("Python")
+
+# 2.1.13 LAB Dando formato a la salida.
+
+# Escenario
+
+Te recomendamos encarecidamente que juegues con el código que hemos escrito para y realiza algunos (quizás incluso destructivos) cambios. Siéntete libre de modificar cualquier parte del código, pero hay una condición - aprende de tus errores y saca tus propias conclusiones.
+
+Intenta:
+
+- Minimizar el número de invocaciones de la función print() insertando \n en las cadenas.
+
+- Hacer que la flecha sea el doble de grande (pero mantener las proporciones)
+
+- Duplica la flecha, colocando ambas flechas una al lado de la otra; nota: una cadena se puede multiplicar usando el siguiente truco: "string" \* 2 producirá "stringstring" (pronto contaremos más al respecto).
+
+- Elimina cualquiera de las comillas y observe detenidamente la respuesta de Python; presta atención a dónde Python ve un error - ¿es este el lugar donde realmente existe el error?
+
+- Haz lo mismo con algunos de los paréntesis.
+
+- Cambia cualquiera de las palabras print por otra cosa, que difiera solo en mayúsculas y minúsculas (por ejemplo, Print) - qué sucede ahora?
+
+- Reemplaza algunas de las comillas con apóstrofes; observa lo que sucede con cuidado.
+
+# Sample Solution
+
+    ###################
+    print("original version:")
+    ###################
+    print("    *")
+    print("   * *")
+    print("  *   *")
+    print(" *     *")
+    print("***   ***")
+    print("  *   *")
+    print("  *   *")
+    print("  *****")
+    ###################
+    print("with fewer 'print()' invocations:")
+    ###################
+    print("    *\n   * *\n  *   *\n *     *\n***   ***")
+    print("  *   *\n  *   *\n  *****")
+    ###################
+    print("higher:")
+    ###################
+    print("        *")
+    print("       * *")
+    print("      *   *")
+    print("     *     *")
+    print("    *       *")
+    print("   *         *")
+    print("  *           *")
+    print(" *             *")
+    print("******     ******")
+    print("     *     *")
+    print("     *     *")
+    print("     *     *")
+    print("     *     *")
+    print("     *     *")
+    print("     *     *")
+    print("     *******")
+    ###################
+    print("doubled:")
+    ###################
+    print("        *        "*2)
+    print("       * *       "*2)
+    print("      *   *      "*2)
+    print("     *     *     "*2)
+    print("    *       *    "*2)
+    print("   *         *   "*2)
+    print("  *           *  "*2)
+    print(" *             * "*2)
+    print("******     ******"*2)
+    print("     *     *     "*2)
+    print("     *     *     "*2)
+    print("     *     *     "*2)
+    print("     *     *     "*2)
+    print("     *     *     "*2)
+    print("     *     *     "*2)
+    print("     *******     "*2)
+
+# 2.1.14 RESUMEN DE SECCIÓN.
+
+1. La función print() es una función integrada imprime/envía un mensaje específico a la pantalla/ventana de consola.
+
+2. Las funciones integradas, al contrario de las funciones definidas por el usuario, están siempre disponibles y no tienen que ser importadas. Python 3.7.1 viene con 69 funciones incorporadas. Puedes encontrar su lista completa en orden alfabético en Python Standard Library. https://docs.python.org/3/library/functions.html
+
+3. Para llamar a una función (invocación de función), debe utilizarse el nombre de la función seguido de un paréntesis. Puedes pasar argumentos a una función colocándolos dentro de los paréntesis. Se deben separar los argumentos con una coma, por ejemplo, print("¡Hola,", "Mundo!"). Una función print() "vacía" imprime una línea vacía a la pantalla.
+
+4. Las cadenas de Python están delimitadas por comillas, por ejemplo, "Soy una cadena" (comillas dobles), o 'Yo soy una cadena, también' (comillas simples).
+
+5. Los programas de computadora son colecciones de instrucciones. Una instrucción es un comando para realizar una tarea específica cuando se ejecuta, por ejemplo, para imprimir un determinado mensaje en la pantalla.
+
+6. En las cadenas de Python la barra diagonal inversa (\) es un carácter especial que anuncia que el siguiente carácter tiene un significado diferente, por ejemplo, \n (el carácter de nuevalínea) comienza una nuevalínea de salida.
+
+7. Los argumentos posicionales son aquellos cuyo significado viene dictado por su posición, por ejemplo, el segundo argumento se emite después del primero, el tercero se emite después del segundo, etc.
+
+8. Los argumentos de palabra clave son aquellos cuyo significado no está dictado por su ubicación, sino por una palabra especial (palabra clave) que se utiliza para identificarlos.
+
+9. Los parámetros end y sep se pueden usar para dar formato la salida de la función print(). El parámetro sep especifica el separador entre los argumentos emitidos. Por ejemplo, print("H", "E", "L", "L", "O", sep="-"), mientras que el parámetro end especifica que imprimir al final de la declaración de impresión.
